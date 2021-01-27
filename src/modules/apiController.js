@@ -9,17 +9,20 @@ const getCityWeather = async (city) => {
     },
   );
   const weatherData = await response.json();
+  console.log(weatherData);
   return processData(weatherData);
 };
 
 const processData = async (data) => {
   const compiledData = {
+    city: data.name,
     temperature: data.main.temp,
     humidity: data.main.humidity,
     country: data.sys.country,
     weatherType: data.weather[0].main,
     weatherDescription: data.weather[0].description,
-    wind: data.wind.deg,
+    wind: data.wind.speed,
+    feelsLike: data.main.feels_like,
   };
   return compiledData;
 };

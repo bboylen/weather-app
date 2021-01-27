@@ -1,38 +1,48 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Weather</title>
+    <meta name="author" content="" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<head>
-  <meta charset="utf-8">
-  <title>Weather</title>
-  <meta name="author" content="">
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="reset.css" rel="stylesheet" />
+    <link href="styles.css" rel="stylesheet" />
+  </head>
 
-  <link href="reset.css" rel="stylesheet">
-  <link href="styles.css" rel="stylesheet">
-</head>
-
-<body>
-  <main>
-    <div id="search-bar">
-     <input type="text">
-    </div>
-    <div id="display-wrapper">
-      <div id="display">
-        <h1 id="city-name"></h1>
-        <h2 id="weather-type"></h2>
-        <div class="info-container">
-          <div id="weather-pic"></div>
-          <ul id="info-list">
-            <li ></li>
-          </ul>
+  <body>
+    <main>
+      <form id="search-container">
+        <div id="search-bar">
+          <button type="submit"></button>
+          <input type="text" />
+        </div>
+      </form>
+      <div id="display-wrapper">
+        <div id="display">
+          <h1 id="city-name"></h1>
+          <h2 id="weather-type"></h2>
+          <div id="info-container">
+            <div id="temperature-wrapper">
+              <div id="temperature"></div>
+              <div id="temp-unit"></div>
+            </div>
+            <ul id="info-list">
+              <li id="humidity"></li>
+              <li id="wind"></li>
+              <li id="feels-like"></li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-  </main>
-  
+    </main>
 
-  <script src="main.js"></script>
-</body>
-
+    <script src="main.js"></script>
+  </body>
 </html>
