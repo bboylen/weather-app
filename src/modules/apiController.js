@@ -9,7 +9,6 @@ const getCityWeather = async (city) => {
     },
   );
   const weatherData = await response.json();
-  console.log(weatherData);
   return processData(weatherData);
 };
 

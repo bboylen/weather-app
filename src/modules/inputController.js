@@ -7,17 +7,19 @@ const initializeListener = () => {
 
 const searchCity = (e) => {
   e.preventDefault();
+  clearError();
   getCityWeather(e.target[1].value)
     .then((weatherData) => {
       updateDisplay(weatherData);
     })
     .catch((err) => {
       console.log(err);
+      triggerError();
     });
 };
 
 const updateDisplay = (weatherData) => {
-  console.log(weatherData)
+  console.log(weatherData);
   const wind_unit = 'MPH';
   const temp_unit = 'F°';
   const cityName = document.getElementById('city-name');
@@ -35,4 +37,15 @@ const updateDisplay = (weatherData) => {
   const feelsLike = document.getElementById('feels-like');
   feelsLike.textContent = `${weatherData.feelsLike} ${temp_unit}`;
 };
+
+const triggerError = () => {
+  const err = document.getElementById('error');
+  err.style.display = 'block';
+};
+
+const clearError = () => {
+  const err = document.getElementById('error');
+  err.style.display = 'none';
+};
+
 export default initializeListener;
